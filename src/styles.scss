@@ -6,6 +6,7 @@ $cor-Primaria: rgb(192, 132, 252);
 $cor-Secundaria: rgb(126, 34, 206);
 
 $cor-Fundo: rgb(24, 24, 27);
+$cor-Fundo-Secundaria: rgb(39, 31, 57);
 $cor-Texto: rgb(244, 244, 245);
 
 $fonte-Principal: Georgia, 'Times New Roman', serif;
@@ -153,6 +154,7 @@ html {
     min-height: 80vh;
     display: flex;
     align-items: center;
+
 }
 
 .sobre .container {
@@ -261,6 +263,7 @@ html {
 
 .projetos {
     min-height: 80vh;
+    background-color: $cor-Fundo-Secundaria;
 }
 
 .projetos-cabecalho {

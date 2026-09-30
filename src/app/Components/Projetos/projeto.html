@@ -26,8 +26,7 @@
 
         <div class="row g-4 justify-content-center">
 
-
-            <!-- GERADOR DE CERTIFICADOS -->
+            @for (item of itens; track item.titulo) {
 
             <div class="col-md-6 col-lg-5">
 
@@ -37,7 +36,7 @@
 
                     <div class="projeto-imagem">
 
-                        <i class="bi bi-patch-check"></i>
+                        <i class="bi {{ item.icone }}"></i>
 
                     </div>
 
@@ -46,12 +45,13 @@
 
                     <div class="projeto-conteudo">
 
-                        <h3>Gerador de Certificados</h3>
+                        <h3>
+                            {{ item.titulo }}
+                        </h3>
+
 
                         <p>
-                            Aplicação para geração e gerenciamento de certificados,
-                            permitindo o cadastro de cursos e alunos e a geração
-                            automatizada de certificados em PDF.
+                            {{ item.descricao }}
                         </p>
 
 
@@ -59,12 +59,13 @@
 
                         <div class="projeto-tecnologias">
 
-                            <span>.NET</span>
-                            <span>PostgreSQL</span>
-                            <span>Node.js</span>
-                            <span>React</span>
-                            <span>RabbitMQ</span>
-                            <span>JWT</span>
+                            @for (tecnologia of item.tecnologias; track tecnologia) {
+
+                            <span>
+                                {{ tecnologia }}
+                            </span>
+
+                            }
 
                         </div>
 
@@ -73,7 +74,10 @@
 
                         <div class="projeto-acoes">
 
-                            <button type="button" class="projeto-link" (click)="abrirDemonstracao()">
+                            <button type="button" class="projeto-link" (click)="abrirDemonstracao(
+                                        item.gif,
+                                        item.placeholderParaGif
+                                    )">
 
                                 <i class="bi bi-play-circle"></i>
 
@@ -82,8 +86,8 @@
                             </button>
 
 
-                            <a href="https://github.com/MergeSinConflitos/GeradorDeCerticados" target="_blank"
-                                rel="noopener noreferrer" class="projeto-link">
+                            <a [href]="item.urlRepositorio" target="_blank" rel="noopener noreferrer"
+                                class="projeto-link">
 
                                 <i class="bi bi-github"></i>
 
@@ -99,77 +103,7 @@
 
             </div>
 
-
-            <!-- ESCOLA DE CURSOS -->
-
-            <div class="col-md-6 col-lg-5">
-
-                <article class="projeto-card">
-
-                    <!-- ÍCONE -->
-
-                    <div class="projeto-imagem">
-
-                        <i class="bi bi-mortarboard"></i>
-
-                    </div>
-
-
-                    <!-- CONTEÚDO -->
-
-                    <div class="projeto-conteudo">
-
-                        <h3>Escola de Cursos</h3>
-
-                        <p>
-                            Aplicação para gerenciamento de alunos,
-                            professores, matrículas e cursos, permitindo
-                            operações de cadastro, edição, exclusão e
-                            visualização.
-                        </p>
-
-
-                        <!-- TECNOLOGIAS -->
-
-                        <div class="projeto-tecnologias">
-
-                            <span>.NET</span>
-                            <span>SQL Server</span>
-                            <span>Entity Framework</span>
-                            <span>Identity</span>
-
-                        </div>
-
-
-                        <!-- AÇÕES -->
-
-                        <div class="projeto-acoes">
-
-                            <button type="button" class="projeto-link" (click)="abrirDemonstracao()">
-
-                                <i class="bi bi-play-circle"></i>
-
-                                Demonstração
-
-                            </button>
-
-
-                            <a href="https://github.com/MergeSinConflitos/Escola-De-Cursos" target="_blank"
-                                rel="noopener noreferrer" class="projeto-link">
-
-                                <i class="bi bi-github"></i>
-
-                                Ver Repositório no GitHub
-
-                            </a>
-
-                        </div>
-
-                    </div>
-
-                </article>
-
-            </div>
+            }
 
         </div>
 
@@ -191,7 +125,8 @@
 
             </button>
 
-            <img src="/images/EscolaApp.gif" alt="Demonstração da Escola de Cursos" class="demonstracao-gif">
+
+            <img [src]="demostracaoGif" [alt]="placeholderParaGif" class="demonstracao-gif">
 
         </div>
 

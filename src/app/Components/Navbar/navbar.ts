@@ -20,6 +20,11 @@ export class Navbar {
             icone: 'bi-code-slash'
         },
         {
+            titulo: 'Habilidades',
+            url: '#habilidades',
+            icone: 'bi-stars'
+        },
+        {
             titulo: 'Contato',
             url: '#contato',
             icone: 'bi-envelope'
