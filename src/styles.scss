@@ -330,7 +330,7 @@ html {
 }
 
 // ============================================================
-// CONTATO
+// CONTATO SOBRE
 // ============================================================
 
 .contato-sobre {
@@ -866,6 +866,190 @@ html {
 
 
     .habilidade-card {
+        padding: 1.25rem;
+    }
+}
+
+//===============================================
+//CONTATO
+//===============================================
+.contato {
+    padding: 6rem 0;
+
+    background:
+        radial-gradient(circle at 15% 20%,
+            rgba(244, 114, 182, 0.18),
+            transparent 35%),
+        radial-gradient(circle at 85% 80%,
+            rgba(192, 132, 252, 0.16),
+            transparent 35%),
+        #211a2b;
+
+    border-top: 1px solid rgba(244, 114, 182, 0.15);
+}
+
+.container {
+    width: min(1100px, 90%);
+    margin: 0 auto;
+}
+
+.cabecalho-secao {
+    max-width: 700px;
+    margin: 0 auto 3rem;
+
+    text-align: center;
+}
+
+.cabecalho-secao h2 {
+    margin-bottom: 1rem;
+
+    font-size: 2.2rem;
+    font-weight: 700;
+
+    color: #fff1f8;
+}
+
+.cabecalho-secao p {
+    margin: 0;
+
+    line-height: 1.7;
+
+    color: #d8cbd6;
+}
+
+.contato-conteudo {
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 1.25rem;
+
+    max-width: 850px;
+
+    margin: 0 auto;
+}
+
+.contato-card {
+    display: flex;
+
+    align-items: center;
+
+    gap: 1rem;
+
+    padding: 1.4rem;
+
+    background: rgba(255, 255, 255, 0.055);
+
+    border: 1px solid rgba(244, 114, 182, 0.18);
+
+    border-radius: 1rem;
+
+    transition:
+        transform 0.25s ease,
+        border-color 0.25s ease,
+        background-color 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.contato-card:hover {
+    transform: translateY(-4px);
+
+    background: rgba(255, 255, 255, 0.085);
+
+    border-color: rgba(244, 114, 182, 0.5);
+
+    box-shadow:
+        0 0 25px rgba(244, 114, 182, 0.12),
+        0 1rem 2rem rgba(0, 0, 0, 0.15);
+}
+
+.contato-card>i {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    flex-shrink: 0;
+
+    width: 3rem;
+    height: 3rem;
+
+    border-radius: 0.75rem;
+
+    background: rgba(244, 114, 182, 0.12);
+
+    border: 1px solid rgba(244, 114, 182, 0.25);
+
+    color: #f9a8d4;
+
+    font-size: 1.3rem;
+}
+
+.contato-card div {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 0.25rem;
+}
+
+.contato-card span {
+    font-size: 0.8rem;
+
+    color: #bcaebe;
+}
+
+.contato-card a,
+.contato-card strong {
+    color: #fff1f8;
+
+    font-size: 0.95rem;
+
+    text-decoration: none;
+}
+
+.contato-card a {
+    transition: color 0.2s ease;
+}
+
+.contato-card a:hover {
+    color: #f9a8d4;
+}
+
+.contato-disponibilidade {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 0.5rem;
+
+    margin-top: 2rem;
+
+    color: #d8cbd6;
+
+    font-size: 0.9rem;
+}
+
+.contato-disponibilidade i {
+    color: #f9a8d4;
+}
+
+@media (max-width: 700px) {
+
+    .contato {
+        padding: 4rem 0;
+    }
+
+    .cabecalho-secao h2 {
+        font-size: 1.8rem;
+    }
+
+    .contato-conteudo {
+        grid-template-columns: 1fr;
+    }
+
+    .contato-card {
         padding: 1.25rem;
     }
 }

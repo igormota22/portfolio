@@ -69,6 +69,16 @@ interface ProjetosIdioma {
     };
 }
 
+interface ContatoIdioma {
+    titulo: string;
+    apresentacao: string;
+    email: string;
+    linkedin: string;
+    github: string;
+    localizacao: string;
+    disponibilidade: string;
+}
+
 type OpcoesIdioma = 'pt' | 'en' | 'es';
 
 @Injectable({
@@ -93,6 +103,8 @@ export class TraducaoService {
             };
             projetos: ProjetosIdioma;
             habilidades: HabilidadesIdioma;
+            contato: ContatoIdioma;
+
         };
 
         en: {
@@ -109,6 +121,8 @@ export class TraducaoService {
             };
             projetos: ProjetosIdioma;
             habilidades: HabilidadesIdioma;
+            contato: ContatoIdioma;
+
         };
 
         es: {
@@ -125,6 +139,8 @@ export class TraducaoService {
             };
             projetos: ProjetosIdioma;
             habilidades: HabilidadesIdioma;
+            contato: ContatoIdioma;
+
         };
     } = {
 
@@ -326,6 +342,22 @@ export class TraducaoService {
                             descricao: 'Editor de código utilizado no desenvolvimento de aplicações e projetos.'
                         }
                     }
+                },
+
+                contato: {
+                    titulo: 'Entre em contato',
+
+                    apresentacao: 'Estou aberto a oportunidades, projetos e conexões profissionais.',
+
+                    email: 'E-mail',
+
+                    linkedin: 'LinkedIn',
+
+                    github: 'GitHub',
+
+                    localizacao: 'Lages - SC, Brasil',
+
+                    disponibilidade: 'Disponível para novas oportunidades'
                 }
             },
 
@@ -528,6 +560,21 @@ export class TraducaoService {
                             descricao: 'Code editor used for application and software project development.'
                         }
                     }
+                },
+                contato: {
+                    titulo: 'Get in touch',
+
+                    apresentacao: 'I am open to opportunities, projects, and professional connections.',
+
+                    email: 'Email',
+
+                    linkedin: 'LinkedIn',
+
+                    github: 'GitHub',
+
+                    localizacao: 'Lages - SC, Brazil',
+
+                    disponibilidade: 'Available for new opportunities'
                 }
             },
 
@@ -730,6 +777,22 @@ export class TraducaoService {
                             descricao: 'Editor de código utilizado en el desarrollo de aplicaciones y proyectos de software.'
                         }
                     }
+                },
+
+                contato: {
+                    titulo: 'Contáctame',
+
+                    apresentacao: 'Estoy abierto a oportunidades, proyectos y conexiones profesionales.',
+
+                    email: 'Correo electrónico',
+
+                    linkedin: 'LinkedIn',
+
+                    github: 'GitHub',
+
+                    localizacao: 'Lages - SC, Brasil',
+
+                    disponibilidade: 'Disponible para nuevas oportunidades'
                 }
             }
         };
