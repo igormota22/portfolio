@@ -18,6 +18,44 @@ interface SobreConteudoIdioma {
     fim: string;
 }
 
+interface HabilidadeIdioma {
+    titulo: string;
+    descricao: string;
+}
+
+export interface HabilidadesIdioma {
+    titulo: string;
+    apresentacao: string;
+    conteudo: string;
+    cards: {
+        dotnet: HabilidadeIdioma;
+        csharp: HabilidadeIdioma;
+        aspnet: HabilidadeIdioma;
+        entityFramework: HabilidadeIdioma;
+        apiRest: HabilidadeIdioma;
+        mediatr: HabilidadeIdioma;
+        jwt: HabilidadeIdioma;
+        sql: HabilidadeIdioma;
+        postgresql: HabilidadeIdioma;
+        sqlServer: HabilidadeIdioma;
+        rabbitmq: HabilidadeIdioma;
+        docker: HabilidadeIdioma;
+        testes: HabilidadeIdioma;
+        identity: HabilidadeIdioma;
+        angular: HabilidadeIdioma;
+        typescript: HabilidadeIdioma;
+        react: HabilidadeIdioma;
+        javascript: HabilidadeIdioma;
+        html: HabilidadeIdioma;
+        css: HabilidadeIdioma;
+        nodejs: HabilidadeIdioma;
+        java: HabilidadeIdioma;
+        git: HabilidadeIdioma;
+        github: HabilidadeIdioma;
+        vscode: HabilidadeIdioma;
+    };
+}
+
 interface ProjetosIdioma {
     titulo: string;
     apresentacao: string;
@@ -31,8 +69,7 @@ interface ProjetosIdioma {
     };
 }
 
-type OpcoesIdioma = 'pt' | 'en' | 'es'
-    ;
+type OpcoesIdioma = 'pt' | 'en' | 'es';
 
 @Injectable({
     providedIn: 'root'
@@ -55,6 +92,7 @@ export class TraducaoService {
                 conteudo: SobreConteudoIdioma;
             };
             projetos: ProjetosIdioma;
+            habilidades: HabilidadesIdioma;
         };
 
         en: {
@@ -70,6 +108,7 @@ export class TraducaoService {
                 conteudo: SobreConteudoIdioma;
             };
             projetos: ProjetosIdioma;
+            habilidades: HabilidadesIdioma;
         };
 
         es: {
@@ -85,12 +124,13 @@ export class TraducaoService {
                 conteudo: SobreConteudoIdioma;
             };
             projetos: ProjetosIdioma;
+            habilidades: HabilidadesIdioma;
         };
     } = {
 
-            // =========================
+            // =====================================================
             // PORTUGUÊS
-            // =========================
+            // =====================================================
 
             pt: {
 
@@ -102,84 +142,197 @@ export class TraducaoService {
                 },
 
                 sobre: {
-
                     titulo: 'Sobre mim',
 
                     apresentacao: {
-                        inicio: 'Olá, eu sou ',
-                        destaque: 'Igor Mota De Mello.'
+                        inicio: 'Olá, eu sou',
+                        destaque: 'Igor Mota De Mello'
                     },
 
                     conteudo: {
-                        inicio:
-                            'Sou Técnico em Informática e ',
+                        inicio: 'Sou Técnico em Informática e desenvolvedor de software em formação, atualmente direcionando minha carreira para o desenvolvimento de aplicações, com foco no desenvolvimento',
 
-                        destaque:
-                            'desenvolvedor de software em formação',
+                        destaque: 'Full Stack',
 
-                        meio:
-                            '. Estou construindo minha carreira na área de tecnologia, com foco no ',
+                        meio: 'e muito interesse na área de dados. Tenho experiência de aprendizado e prática com',
 
-                        destaque2:
-                            'desenvolvimento de aplicações',
+                        destaque2: 'C# e .NET',
 
-                        fim:
-                            ' e no aprendizado contínuo. Gosto de transformar ideias em projetos e desafios em novas oportunidades para evoluir. Atualmente, direciono minha trajetória para o desenvolvimento Full Stack, buscando ampliar minha experiência tanto no desenvolvimento de aplicações quanto na construção de interfaces.'
+                        fim: ', além de tecnologias voltadas para APIs, bancos de dados, autenticação, mensageria, testes e desenvolvimento frontend.'
                     }
                 },
 
                 projetos: {
-
                     titulo: 'Projetos',
 
-                    apresentacao:
-                        'Projetos que desenvolvi',
+                    apresentacao: 'Projetos desenvolvidos durante minha formação',
 
-                    conteudo:
-                        'Alguns dos projetos desenvolvidos durante minha formação, estudos e prática com desenvolvimento de software.',
+                    conteudo: 'Aplicações que venho desenvolvendo para colocar em prática conceitos de programação, arquitetura, APIs, bancos de dados, frontend e boas práticas de desenvolvimento.',
 
-                    demonstracao:
-                        'Demonstração',
+                    demonstracao: 'Demonstração',
 
-                    repositorio:
-                        'Ver Repositório no GitHub',
+                    repositorio: 'Repositório',
 
                     cards: {
 
                         geradorCertificados: {
-
-                            titulo:
-                                'Gerador de Certificados',
-
-                            descricao:
-                                'Aplicação para geração e gerenciamento de certificados, permitindo o cadastro de cursos e alunos e a geração automatizada de certificados em PDF.'
+                            titulo: 'Gerador de Certificados',
+                            descricao: 'API para geração e gerenciamento de certificados.'
                         },
 
                         escolaCursos: {
-
-                            titulo:
-                                'Escola de Cursos',
-
-                            descricao:
-                                'Aplicação para gerenciamento de alunos, professores, matrículas e cursos, permitindo operações de cadastro, edição, exclusão e visualização.'
+                            titulo: 'Escola de Cursos',
+                            descricao: 'Aplicação para gerenciamento de cursos, alunos e informações relacionadas ao ambiente educacional.'
                         },
 
                         controleMedicamentos: {
+                            titulo: 'Controle de Medicamentos',
+                            descricao: 'Aplicação voltada ao controle e gerenciamento de medicamentos, desenvolvida para praticar conceitos de desenvolvimento de software.'
+                        }
+                    }
+                },
 
-                            titulo:
-                                'Controle de Medicamentos Web',
+                habilidades: {
+                    titulo: 'Habilidades',
 
-                            descricao:
-                                'Aplicação para gerenciamento de pacientes, funcionários, medicamentos e receitas.'
+                    apresentacao: 'Tecnologias e ferramentas',
+
+                    conteudo: 'Tecnologias e ferramentas que venho estudando e utilizando durante minha formação e desenvolvimento de projetos.',
+
+                    cards: {
+
+                        dotnet: {
+                            titulo: '.NET',
+                            descricao: 'Plataforma utilizada no desenvolvimento de aplicações.'
+                        },
+
+                        csharp: {
+                            titulo: 'C#',
+                            descricao: 'Linguagem principal utilizada no desenvolvimento backend.'
+                        },
+
+                        aspnet: {
+                            titulo: 'ASP.NET Core',
+                            descricao: 'Framework utilizado no desenvolvimento de aplicações web e APIs.'
+                        },
+
+                        entityFramework: {
+                            titulo: 'Entity Framework Core',
+                            descricao: 'ORM utilizado para trabalhar com bancos de dados.'
+                        },
+
+                        apiRest: {
+                            titulo: 'APIs REST',
+                            descricao: 'Desenvolvimento de APIs seguindo princípios REST.'
+                        },
+
+                        mediatr: {
+                            titulo: 'MediatR',
+                            descricao: 'Biblioteca utilizada para implementar o padrão Mediator.'
+                        },
+
+                        jwt: {
+                            titulo: 'JWT',
+                            descricao: 'Tecnologia utilizada para autenticação baseada em tokens.'
+                        },
+
+                        sql: {
+                            titulo: 'SQL',
+                            descricao: 'Linguagem utilizada para consulta e manipulação de dados.'
+                        },
+
+                        postgresql: {
+                            titulo: 'PostgreSQL',
+                            descricao: 'Banco de dados relacional utilizado em projetos.'
+                        },
+
+                        sqlServer: {
+                            titulo: 'SQL Server',
+                            descricao: 'Banco de dados relacional utilizado em estudos e projetos.'
+                        },
+
+                        rabbitmq: {
+                            titulo: 'RabbitMQ',
+                            descricao: 'Message broker utilizado para comunicação assíncrona entre aplicações.'
+                        },
+
+                        docker: {
+                            titulo: 'Docker',
+                            descricao: 'Plataforma utilizada para criação e execução de ambientes containerizados.'
+                        },
+
+                        testes: {
+                            titulo: 'Testes Automatizados',
+                            descricao: 'Prática utilizada para verificar o comportamento e a qualidade do software.'
+                        },
+
+                        identity: {
+                            titulo: 'ASP.NET Core Identity',
+                            descricao: 'Sistema utilizado para gerenciamento de usuários e autenticação.'
+                        },
+
+                        angular: {
+                            titulo: 'Angular',
+                            descricao: 'Framework utilizado no desenvolvimento de aplicações frontend.'
+                        },
+
+                        typescript: {
+                            titulo: 'TypeScript',
+                            descricao: 'Linguagem utilizada no desenvolvimento frontend com tipagem estática.'
+                        },
+
+                        react: {
+                            titulo: 'React',
+                            descricao: 'Biblioteca utilizada para desenvolvimento de interfaces frontend.'
+                        },
+
+                        javascript: {
+                            titulo: 'JavaScript',
+                            descricao: 'Linguagem utilizada no desenvolvimento web.'
+                        },
+
+                        html: {
+                            titulo: 'HTML',
+                            descricao: 'Linguagem utilizada para estruturar páginas web.'
+                        },
+
+                        css: {
+                            titulo: 'CSS / SCSS',
+                            descricao: 'Tecnologias utilizadas para estilização e criação de interfaces.'
+                        },
+
+                        nodejs: {
+                            titulo: 'Node.js',
+                            descricao: 'Runtime utilizado para execução de JavaScript no backend.'
+                        },
+
+                        java: {
+                            titulo: 'Java',
+                            descricao: 'Linguagem de programação estudada durante minha formação.'
+                        },
+
+                        git: {
+                            titulo: 'Git',
+                            descricao: 'Sistema de controle de versão utilizado no desenvolvimento.'
+                        },
+
+                        github: {
+                            titulo: 'GitHub',
+                            descricao: 'Plataforma utilizada para hospedagem e colaboração em projetos.'
+                        },
+
+                        vscode: {
+                            titulo: 'Visual Studio Code',
+                            descricao: 'Editor de código utilizado no desenvolvimento de aplicações e projetos.'
                         }
                     }
                 }
             },
 
 
-            // =========================
+            // =====================================================
             // INGLÊS
-            // =========================
+            // =====================================================
 
             en: {
 
@@ -191,84 +344,197 @@ export class TraducaoService {
                 },
 
                 sobre: {
-
                     titulo: 'About me',
 
                     apresentacao: {
-                        inicio: 'Hello, I am ',
-                        destaque: 'Igor Mota De Mello.'
+                        inicio: 'Hello, I am',
+                        destaque: 'Igor Mota De Mello'
                     },
 
                     conteudo: {
-                        inicio:
-                            'I am an IT Technician and ',
+                        inicio: 'I am an IT Technician and software developer in training, currently directing my career towards application development, with a focus on',
 
-                        destaque:
-                            'a software developer in training',
+                        destaque: 'Full Stack development',
 
-                        meio:
-                            '. I am building my career in technology, focusing on ',
+                        meio: 'and a strong interest in data. I have learning and practical experience with',
 
-                        destaque2:
-                            'application development',
+                        destaque2: 'C# and .NET',
 
-                        fim:
-                            ' and continuous learning. I enjoy turning ideas into projects and challenges into opportunities to grow. Currently, I am pursuing a career in Full Stack development, seeking to expand my experience in both application development and interface design.'
+                        fim: ', as well as technologies related to APIs, databases, authentication, messaging, testing and frontend development.'
                     }
                 },
 
                 projetos: {
-
                     titulo: 'Projects',
 
-                    apresentacao:
-                        'Projects I have developed',
+                    apresentacao: 'Projects developed during my training',
 
-                    conteudo:
-                        'Some of the projects developed during my training, studies, and software development practice.',
+                    conteudo: 'Applications I have been developing to put programming, architecture, APIs, databases, frontend and software development best practices into practice.',
 
-                    demonstracao:
-                        'Demo',
+                    demonstracao: 'Demo',
 
-                    repositorio:
-                        'View Repository on GitHub',
+                    repositorio: 'Repository',
 
                     cards: {
 
                         geradorCertificados: {
-
-                            titulo:
-                                'Certificate Generator',
-
-                            descricao:
-                                'Application for generating and managing certificates, allowing the registration of courses and students and the automated generation of certificates in PDF format.'
+                            titulo: 'Certificate Generator',
+                            descricao: 'API for generating and managing certificates.'
                         },
 
                         escolaCursos: {
-
-                            titulo:
-                                'Course School',
-
-                            descricao:
-                                'Application for managing students, teachers, enrollments, and courses, allowing registration, editing, deletion, and viewing operations.'
+                            titulo: 'Course School',
+                            descricao: 'Application for managing courses, students and information related to an educational environment.'
                         },
 
                         controleMedicamentos: {
+                            titulo: 'Medication Management',
+                            descricao: 'Application focused on managing and controlling medications, developed to practice software development concepts.'
+                        }
+                    }
+                },
 
-                            titulo:
-                                'Web Medication Management',
+                habilidades: {
+                    titulo: 'Skills',
 
-                            descricao:
-                                'Application for managing patients, employees, medications, and prescriptions.'
+                    apresentacao: 'Technologies and tools',
+
+                    conteudo: 'Technologies and tools that I have been studying and using throughout my training and software development projects.',
+
+                    cards: {
+
+                        dotnet: {
+                            titulo: '.NET',
+                            descricao: 'Platform used for application development.'
+                        },
+
+                        csharp: {
+                            titulo: 'C#',
+                            descricao: 'Main language used for backend development.'
+                        },
+
+                        aspnet: {
+                            titulo: 'ASP.NET Core',
+                            descricao: 'Framework used for web application and API development.'
+                        },
+
+                        entityFramework: {
+                            titulo: 'Entity Framework Core',
+                            descricao: 'ORM used for working with databases.'
+                        },
+
+                        apiRest: {
+                            titulo: 'REST APIs',
+                            descricao: 'API development following REST principles.'
+                        },
+
+                        mediatr: {
+                            titulo: 'MediatR',
+                            descricao: 'Library used to implement the Mediator pattern.'
+                        },
+
+                        jwt: {
+                            titulo: 'JWT',
+                            descricao: 'Technology used for token-based authentication.'
+                        },
+
+                        sql: {
+                            titulo: 'SQL',
+                            descricao: 'Language used for querying and manipulating data.'
+                        },
+
+                        postgresql: {
+                            titulo: 'PostgreSQL',
+                            descricao: 'Relational database used in projects.'
+                        },
+
+                        sqlServer: {
+                            titulo: 'SQL Server',
+                            descricao: 'Relational database used in studies and projects.'
+                        },
+
+                        rabbitmq: {
+                            titulo: 'RabbitMQ',
+                            descricao: 'Message broker used for asynchronous communication between applications.'
+                        },
+
+                        docker: {
+                            titulo: 'Docker',
+                            descricao: 'Platform used to create and run containerized environments.'
+                        },
+
+                        testes: {
+                            titulo: 'Automated Testing',
+                            descricao: 'Practice used to verify software behavior and quality.'
+                        },
+
+                        identity: {
+                            titulo: 'ASP.NET Core Identity',
+                            descricao: 'System used for user management and authentication.'
+                        },
+
+                        angular: {
+                            titulo: 'Angular',
+                            descricao: 'Framework used for frontend application development.'
+                        },
+
+                        typescript: {
+                            titulo: 'TypeScript',
+                            descricao: 'Language used for frontend development with static typing.'
+                        },
+
+                        react: {
+                            titulo: 'React',
+                            descricao: 'Library used for frontend interface development.'
+                        },
+
+                        javascript: {
+                            titulo: 'JavaScript',
+                            descricao: 'Language used for web development.'
+                        },
+
+                        html: {
+                            titulo: 'HTML',
+                            descricao: 'Language used to structure web pages.'
+                        },
+
+                        css: {
+                            titulo: 'CSS / SCSS',
+                            descricao: 'Technologies used for styling and interface development.'
+                        },
+
+                        nodejs: {
+                            titulo: 'Node.js',
+                            descricao: 'Runtime used to execute JavaScript on the backend.'
+                        },
+
+                        java: {
+                            titulo: 'Java',
+                            descricao: 'Programming language studied during my training.'
+                        },
+
+                        git: {
+                            titulo: 'Git',
+                            descricao: 'Version control system used in software development.'
+                        },
+
+                        github: {
+                            titulo: 'GitHub',
+                            descricao: 'Platform used for hosting and collaborating on projects.'
+                        },
+
+                        vscode: {
+                            titulo: 'Visual Studio Code',
+                            descricao: 'Code editor used for application and software project development.'
                         }
                     }
                 }
             },
 
 
-            // =========================
+            // =====================================================
             // ESPANHOL
-            // =========================
+            // =====================================================
 
             es: {
 
@@ -280,87 +546,197 @@ export class TraducaoService {
                 },
 
                 sobre: {
-
                     titulo: 'Sobre mí',
 
                     apresentacao: {
-                        inicio: 'Hola, soy ',
-                        destaque: 'Igor Mota De Mello.'
+                        inicio: 'Hola, soy',
+                        destaque: 'Igor Mota De Mello'
                     },
 
                     conteudo: {
-                        inicio:
-                            'Soy Técnico en Informática y ',
+                        inicio: 'Soy Técnico en Informática y desarrollador de software en formación, actualmente orientando mi carrera hacia el desarrollo de aplicaciones, con enfoque en el desarrollo',
 
-                        destaque:
-                            'desarrollador de software en formación',
+                        destaque: 'Full Stack',
 
-                        meio:
-                            '. Estoy construyendo mi carrera en el área de tecnología, con enfoque en ',
+                        meio: 'y mucho interés en el área de datos. Tengo experiencia de aprendizaje y práctica con',
 
-                        destaque2:
-                            'el desarrollo de aplicaciones',
+                        destaque2: 'C# y .NET',
 
-                        fim:
-                            ' y el aprendizaje continuo. Me gusta transformar ideas en proyectos y desafíos en nuevas oportunidades para crecer. Actualmente, estoy orientando mi trayectoria hacia el desarrollo Full Stack, buscando ampliar mi experiencia tanto en el desarrollo de aplicaciones como en la construcción de interfaces.'
+                        fim: ', además de tecnologías relacionadas con APIs, bases de datos, autenticación, mensajería, pruebas y desarrollo frontend.'
                     }
                 },
 
                 projetos: {
-
                     titulo: 'Proyectos',
 
-                    apresentacao:
-                        'Proyectos que he desarrollado',
+                    apresentacao: 'Proyectos desarrollados durante mi formación',
 
-                    conteudo:
-                        'Algunos de los proyectos desarrollados durante mi formación, estudios y práctica en desarrollo de software.',
+                    conteudo: 'Aplicaciones que he desarrollado para poner en práctica conceptos de programación, arquitectura, APIs, bases de datos, frontend y buenas prácticas de desarrollo de software.',
 
-                    demonstracao:
-                        'Demostración',
+                    demonstracao: 'Demostración',
 
-                    repositorio:
-                        'Ver Repositorio en GitHub',
+                    repositorio: 'Repositorio',
 
                     cards: {
 
                         geradorCertificados: {
-
-                            titulo:
-                                'Generador de Certificados',
-
-                            descricao:
-                                'Aplicación para la generación y gestión de certificados, permitiendo registrar cursos y alumnos y generar certificados automáticamente en formato PDF.'
+                            titulo: 'Generador de Certificados',
+                            descricao: 'API para la generación y gestión de certificados.'
                         },
 
                         escolaCursos: {
-
-                            titulo:
-                                'Escuela de Cursos',
-
-                            descricao:
-                                'Aplicación para gestionar alumnos, profesores, matrículas y cursos, permitiendo realizar operaciones de registro, edición, eliminación y visualización.'
+                            titulo: 'Escuela de Cursos',
+                            descricao: 'Aplicación para la gestión de cursos, estudiantes e información relacionada con un entorno educativo.'
                         },
 
                         controleMedicamentos: {
+                            titulo: 'Control de Medicamentos',
+                            descricao: 'Aplicación enfocada en el control y gestión de medicamentos, desarrollada para practicar conceptos de desarrollo de software.'
+                        }
+                    }
+                },
 
-                            titulo:
-                                'Gestión de Medicamentos Web',
+                habilidades: {
+                    titulo: 'Habilidades',
 
-                            descricao:
-                                'Aplicación para gestionar pacientes, empleados, medicamentos y recetas.'
+                    apresentacao: 'Tecnologías y herramientas',
+
+                    conteudo: 'Tecnologías y herramientas que he estado estudiando y utilizando durante mi formación y desarrollo de proyectos de software.',
+
+                    cards: {
+
+                        dotnet: {
+                            titulo: '.NET',
+                            descricao: 'Plataforma utilizada para el desarrollo de aplicaciones.'
+                        },
+
+                        csharp: {
+                            titulo: 'C#',
+                            descricao: 'Lenguaje principal utilizado en el desarrollo backend.'
+                        },
+
+                        aspnet: {
+                            titulo: 'ASP.NET Core',
+                            descricao: 'Framework utilizado para el desarrollo de aplicaciones web y APIs.'
+                        },
+
+                        entityFramework: {
+                            titulo: 'Entity Framework Core',
+                            descricao: 'ORM utilizado para trabajar con bases de datos.'
+                        },
+
+                        apiRest: {
+                            titulo: 'APIs REST',
+                            descricao: 'Desarrollo de APIs siguiendo principios REST.'
+                        },
+
+                        mediatr: {
+                            titulo: 'MediatR',
+                            descricao: 'Biblioteca utilizada para implementar el patrón Mediator.'
+                        },
+
+                        jwt: {
+                            titulo: 'JWT',
+                            descricao: 'Tecnología utilizada para la autenticación basada en tokens.'
+                        },
+
+                        sql: {
+                            titulo: 'SQL',
+                            descricao: 'Lenguaje utilizado para consultar y manipular datos.'
+                        },
+
+                        postgresql: {
+                            titulo: 'PostgreSQL',
+                            descricao: 'Base de datos relacional utilizada en proyectos.'
+                        },
+
+                        sqlServer: {
+                            titulo: 'SQL Server',
+                            descricao: 'Base de datos relacional utilizada en estudios y proyectos.'
+                        },
+
+                        rabbitmq: {
+                            titulo: 'RabbitMQ',
+                            descricao: 'Message broker utilizado para la comunicación asíncrona entre aplicaciones.'
+                        },
+
+                        docker: {
+                            titulo: 'Docker',
+                            descricao: 'Plataforma utilizada para crear y ejecutar entornos containerizados.'
+                        },
+
+                        testes: {
+                            titulo: 'Pruebas Automatizadas',
+                            descricao: 'Práctica utilizada para verificar el comportamiento y la calidad del software.'
+                        },
+
+                        identity: {
+                            titulo: 'ASP.NET Core Identity',
+                            descricao: 'Sistema utilizado para la gestión de usuarios y autenticación.'
+                        },
+
+                        angular: {
+                            titulo: 'Angular',
+                            descricao: 'Framework utilizado para el desarrollo de aplicaciones frontend.'
+                        },
+
+                        typescript: {
+                            titulo: 'TypeScript',
+                            descricao: 'Lenguaje utilizado para el desarrollo frontend con tipado estático.'
+                        },
+
+                        react: {
+                            titulo: 'React',
+                            descricao: 'Biblioteca utilizada para el desarrollo de interfaces frontend.'
+                        },
+
+                        javascript: {
+                            titulo: 'JavaScript',
+                            descricao: 'Lenguaje utilizado para el desarrollo web.'
+                        },
+
+                        html: {
+                            titulo: 'HTML',
+                            descricao: 'Lenguaje utilizado para estructurar páginas web.'
+                        },
+
+                        css: {
+                            titulo: 'CSS / SCSS',
+                            descricao: 'Tecnologías utilizadas para la estilización y creación de interfaces.'
+                        },
+
+                        nodejs: {
+                            titulo: 'Node.js',
+                            descricao: 'Runtime utilizado para ejecutar JavaScript en el backend.'
+                        },
+
+                        java: {
+                            titulo: 'Java',
+                            descricao: 'Lenguaje de programación estudiado durante mi formación.'
+                        },
+
+                        git: {
+                            titulo: 'Git',
+                            descricao: 'Sistema de control de versiones utilizado en el desarrollo.'
+                        },
+
+                        github: {
+                            titulo: 'GitHub',
+                            descricao: 'Plataforma utilizada para alojar y colaborar en proyectos.'
+                        },
+
+                        vscode: {
+                            titulo: 'Visual Studio Code',
+                            descricao: 'Editor de código utilizado en el desarrollo de aplicaciones y proyectos de software.'
                         }
                     }
                 }
             }
         };
 
-
-
     alterarIdioma(idioma: OpcoesIdioma): void {
         this.idioma.set(idioma);
     }
-
 
     obterTraducoes() {
         return this.traducoes[this.idioma()];

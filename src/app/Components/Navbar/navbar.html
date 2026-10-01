@@ -4,19 +4,7 @@
         <a class="navbar-brand text-light fw-medium fst-italic" routerLink="/">
             Igor Mota Mello
         </a>
-        <div class="seletor-idioma">
-            <i class="bi bi-translate"></i>
 
-            <select [value]="traducao.idioma()" (change)="alterarIdioma($any($event.target).value)">
-
-                <option value="pt">🇧🇷 Português</option>
-                <option value="en">🇺🇸 English</option>
-                <option value="es">🇪🇸 Español</option>
-
-            </select>
-
-            <i class="bi bi-chevron-down"></i>
-        </div>
 
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
             aria-controls="navbarNav" aria-expanded="false" aria-label="Abrir menu">
@@ -25,10 +13,22 @@
 
         </button>
 
+
         <div class="collapse navbar-collapse" id="navbarNav">
+            <div class="seletor-idioma">
+                <i class="bi bi-translate"></i>
 
+                <select [value]="traducao.idioma()" (change)="alterarIdioma($any($event.target).value)">
+
+                    <option value="pt">🇧🇷 Português</option>
+                    <option value="en">🇺🇸 English</option>
+                    <option value="es">🇪🇸 Español</option>
+
+                </select>
+
+                <i class="bi bi-chevron-down"></i>
+            </div>
             <ul class="navbar-nav ms-auto">
-
                 @for (item of itens; track $index) {
 
                 <li class="nav-item">
