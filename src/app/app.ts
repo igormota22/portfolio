@@ -6,7 +6,6 @@ import { Projeto } from './Components/Projetos/projeto';
 @Component({
   imports: [Navbar, Sobre, Projeto],
   selector: 'app-root',
-  styleUrl: './app.scss',
   templateUrl: './app.html',
 })
 export class App {

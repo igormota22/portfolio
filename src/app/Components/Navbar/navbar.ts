@@ -1,34 +1,47 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { TraducaoService } from '../../../Traducao/traducao.service';
+
+interface ItemNavbar {
+    titulo: 'sobre' | 'projetos' | 'habilidades' | 'contato';
+    url: string;
+    icone: string;
+}
 
 @Component({
     selector: 'app-navbar',
-    standalone: true,
     imports: [],
     templateUrl: './navbar.html',
 })
 export class Navbar {
 
-    itens = [
+    traducao = inject(TraducaoService);
+
+    itens: ItemNavbar[] = [
         {
-            titulo: 'Sobre',
+            titulo: 'sobre',
             url: '#sobre',
             icone: 'bi-person'
         },
         {
-            titulo: 'Projetos',
+            titulo: 'projetos',
             url: '#projetos',
             icone: 'bi-code-slash'
         },
         {
-            titulo: 'Habilidades',
+            titulo: 'habilidades',
             url: '#habilidades',
             icone: 'bi-stars'
         },
         {
-            titulo: 'Contato',
+            titulo: 'contato',
             url: '#contato',
             icone: 'bi-envelope'
         }
     ];
 
+    alterarIdioma(idioma: OpcoesIdioma): void {
+        this.traducao.alterarIdioma(idioma);
+    }
 }
+
+type OpcoesIdioma = 'pt' | 'en' | 'es'

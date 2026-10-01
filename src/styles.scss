@@ -75,6 +75,60 @@ $fonte-padrao: Georgia, 'Times New Roman', serif;
     }
 }
 
+.seletor-idioma {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+
+    padding: 0.4rem 0.75rem;
+
+    border: 1px solid rgba(192, 132, 252, 0.35);
+    border-radius: 0.5rem;
+
+    background-color: rgba(24, 24, 27, 0.35);
+
+    color: $cor-Texto;
+
+    transition:
+        border-color 0.2s ease,
+        background-color 0.2s ease;
+
+    i:first-child {
+        color: $cor-Primaria;
+        font-size: 1rem;
+    }
+
+    i:last-child {
+        color: rgb(161, 161, 170);
+        font-size: 0.75rem;
+    }
+
+    &:hover {
+        border-color: rgba(192, 132, 252, 0.7);
+        background-color: rgba(192, 132, 252, 0.08);
+    }
+
+    select {
+        appearance: none;
+        border: 0;
+        outline: 0;
+
+        background-color: transparent;
+
+        color: $cor-Texto;
+        font-family: inherit;
+        font-size: 0.85rem;
+        font-weight: 500;
+
+        cursor: pointer;
+
+        option {
+            background-color: $cor-Fundo-Secundaria;
+            color: $cor-Texto;
+        }
+    }
+}
+
 
 // ============================================================
 // CONTEÚDO PRINCIPAL
@@ -182,11 +236,11 @@ html {
 .foto-sobre {
     position: relative;
 
-    width: 220px;
+    width: 240px;
 
-    margin: 0 auto 0.50rem;
+    margin: 0 auto 1rem;
 
-    padding: 0.75rem;
+    padding: 0.75rem 0.75rem 2rem;
 }
 
 .foto-perfil {
@@ -200,11 +254,14 @@ html {
 
     object-fit: cover;
 
-    border-radius: 1.25rem;
+    border-radius: 0.5rem;
 
-    border: 1px solid rgba(167, 139, 250, 0.35);
+    border: 2px solid rgba(167, 139, 250, 0.7);
 
-    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.3);
+    box-shadow:
+        0 0 10px rgba(167, 139, 250, 0.35),
+        0 0 25px rgba(139, 92, 246, 0.2),
+        0 1rem 2rem rgba(0, 0, 0, 0.35);
 
     z-index: 1;
 }
@@ -215,16 +272,20 @@ html {
     inset: 0;
 
     background:
-        radial-gradient(circle at 30% 30%,
-            rgba(167, 139, 250, 0.35),
-            transparent 55%),
-        linear-gradient(135deg,
-            rgb(49, 46, 129),
-            rgb(30, 27, 75));
+        linear-gradient(145deg,
+            rgb(31, 31, 45),
+            rgb(15, 15, 25));
 
-    border-radius: 1.25rem;
+    border: 2px solid rgba(167, 139, 250, 0.5);
 
-    transform: rotate(-3deg);
+    border-radius: 0.75rem;
+
+    box-shadow:
+        0 0 15px rgba(167, 139, 250, 0.3),
+        0 0 35px rgba(139, 92, 246, 0.15),
+        0 1.5rem 2rem rgba(0, 0, 0, 0.35);
+
+    z-index: 0;
 }
 
 // ============================================================

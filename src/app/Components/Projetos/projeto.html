@@ -7,16 +7,15 @@
         <div class="projetos-cabecalho text-center mb-5">
 
             <span class="text-uppercase fw-semibold text-primary">
-                Projetos
+                {{ traducao.obterTraducoes().projetos.titulo }}
             </span>
 
             <h2 class="fw-bold mt-2">
-                Projetos que desenvolvi
+                {{ traducao.obterTraducoes().projetos.apresentacao }}
             </h2>
 
-            <p class="text-secondary mx-auto">
-                Alguns dos projetos desenvolvidos durante minha formação,
-                estudos e prática com desenvolvimento de software.
+            <p class="text-light mx-auto">
+                {{ traducao.obterTraducoes().projetos.conteudo }}
             </p>
 
         </div>
@@ -26,7 +25,7 @@
 
         <div class="row g-4 justify-content-center">
 
-            @for (item of itens; track item.titulo) {
+            @for (item of itens; track item.chave) {
 
             <div class="col-md-6 col-lg-5">
 
@@ -46,12 +45,21 @@
                     <div class="projeto-conteudo">
 
                         <h3>
-                            {{ item.titulo }}
+                            {{
+                            traducao.obterTraducoes()
+                            .projetos
+                            .cards[item.chave]
+                            .titulo
+                            }}
                         </h3>
 
-
                         <p>
-                            {{ item.descricao }}
+                            {{
+                            traducao.obterTraducoes()
+                            .projetos
+                            .cards[item.chave]
+                            .descricao
+                            }}
                         </p>
 
 
@@ -59,7 +67,10 @@
 
                         <div class="projeto-tecnologias">
 
-                            @for (tecnologia of item.tecnologias; track tecnologia) {
+                            @for (
+                            tecnologia of item.tecnologias;
+                            track tecnologia
+                            ) {
 
                             <span>
                                 {{ tecnologia }}
@@ -75,13 +86,17 @@
                         <div class="projeto-acoes">
 
                             <button type="button" class="projeto-link" (click)="abrirDemonstracao(
-                                        item.gif,
-                                        item.placeholderParaGif
-                                    )">
+                                    item.gif,
+                                    item.placeholderParaGif
+                                )">
 
                                 <i class="bi bi-play-circle"></i>
 
-                                Demonstração
+                                {{
+                                traducao.obterTraducoes()
+                                .projetos
+                                .demonstracao
+                                }}
 
                             </button>
 
@@ -91,7 +106,11 @@
 
                                 <i class="bi bi-github"></i>
 
-                                Ver Repositório no GitHub
+                                {{
+                                traducao.obterTraducoes()
+                                .projetos
+                                .repositorio
+                                }}
 
                             </a>
 

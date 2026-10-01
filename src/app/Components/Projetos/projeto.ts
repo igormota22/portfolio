@@ -1,16 +1,27 @@
-import { Component } from "@angular/core";
+import { Component, inject } from "@angular/core";
+import { TraducaoService } from "../../../Traducao/traducao.service";
+
+interface ItemProjeto {
+    chave: 'geradorCertificados' | 'escolaCursos' | 'controleMedicamentos';
+    tecnologias: string[];
+    urlRepositorio: string;
+    gif: string;
+    placeholderParaGif: string;
+    icone: string;
+}
+
 
 @Component({
     selector: 'app-projeto',
     imports: [],
     templateUrl: './projeto.html'
 })
-export class Projeto {
 
-    itens = [
+export class Projeto {
+    itens: ItemProjeto[] = [
         {
-            titulo: 'Gerador de Certificados',
-            descricao: 'Aplicação para geração e gerenciamento de certificados, permitindo o cadastro de cursos e alunos e a geração automatizada de certificados em PDF.',
+            chave: 'geradorCertificados',
+
             tecnologias: [
                 '.NET',
                 'PostgreSQL',
@@ -19,25 +30,55 @@ export class Projeto {
                 'RabbitMQ',
                 'JWT'
             ],
-            urlRepositorio: 'https://github.com/MergeSinConflitos/GeradorDeCerticados',
+
+            urlRepositorio:
+                'https://github.com/MergeSinConflitos/GeradorDeCerticados',
+
             gif: '',
-            placeholderParaGif: 'Demonstração do Gerador de Certificados',
+
+            placeholderParaGif:
+                'Demonstração do Gerador de Certificados',
+
             icone: 'bi-patch-check'
         },
 
         {
-            titulo: 'Escola de Cursos',
-            descricao: 'Aplicação para gerenciamento de alunos, professores, matrículas e cursos, permitindo operações de cadastro, edição, exclusão e visualização.',
+            chave: 'escolaCursos',
+
             tecnologias: [
                 '.NET',
                 'SQL Server',
                 'Entity Framework',
                 'Identity'
             ],
-            urlRepositorio: 'https://github.com/MergeSinConflitos/Escola-De-Cursos',
+
+            urlRepositorio:
+                'https://github.com/MergeSinConflitos/Escola-De-Cursos',
+
             gif: '/images/EscolaApp.gif',
-            placeholderParaGif: 'Demonstração da Escola de Cursos',
+
+            placeholderParaGif:
+                'Demonstração da Escola de Cursos',
+
             icone: 'bi-mortarboard'
+        },
+
+        {
+            chave: 'controleMedicamentos',
+
+            tecnologias: [
+                '.NET',
+                'SQL Server'
+            ],
+            urlRepositorio:
+                'https://github.com/MergeSinConflitos/Controle-de-Medicamentos-Web',
+
+            gif: '/images/CdMWeb.gif',
+
+            placeholderParaGif:
+                'Demonstração de Controle de Medicamentos Web',
+
+            icone: 'bi bi-prescription2'
         }
     ];
 
@@ -61,4 +102,6 @@ export class Projeto {
         this.demostracaoGif = '';
         this.placeholderParaGif = '';
     }
+
+    traducao = inject(TraducaoService);
 }
