@@ -55,7 +55,7 @@ export class Projeto {
             urlRepositorio:
                 'https://github.com/MergeSinConflitos/Escola-De-Cursos',
 
-            gif: '/images/EscolaApp.gif',
+            gif: 'images/EscolaApp.gif',
 
             placeholderParaGif:
                 'Demonstração da Escola de Cursos',
@@ -73,7 +73,7 @@ export class Projeto {
             urlRepositorio:
                 'https://github.com/MergeSinConflitos/Controle-de-Medicamentos-Web',
 
-            gif: '/images/CdMWeb.gif',
+            gif: 'images/CdMWeb.gif',
 
             placeholderParaGif:
                 'Demonstração de Controle de Medicamentos Web',
